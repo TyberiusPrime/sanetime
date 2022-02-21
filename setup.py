@@ -1,20 +1,20 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-__VERSION__ = '4.2.3'
+__VERSION__ = '5.0.0'
 
 setup(
-    name='sanetime',
+    name='sanetime_py3',
     version=__VERSION__,
     author='prior',
     author_email='mprior@hubspot.com',
-    maintainer='prior',
-    maintainer_email='mprior@hubspot.com',
+    maintainer='finkernagel',
+    maintainer_email='finkernagel@imt.uni-marburg.de',
     packages=find_packages(),
-    url='http://hubspot.github.com/sanetime/',
-    download_url='https://github.com/HubSpot/sanetime/tarball/v%s'%__VERSION__,
+    url='http://github.com/TyberiusPrime/sanetime',
+    download_url='https://github.com/TyberiusPrime/sanetime/tarball/v%s'%__VERSION__,
     license=open('LICENSE').read(),
-    description='A sane date/time python interface:  better epoch time, timezones, and deltas -- django support as well',
+    description='A sane date/time python interface:  better epoch time, timezones, and deltas -- django support as well. Now with python3 support',
     long_description=open('README.markdown').read(),
     install_requires=[
         'pytz',

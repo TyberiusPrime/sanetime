@@ -1,6 +1,10 @@
-# sanetime
+# sanetime_py3
 
 **A sane date/time python interface:** better epoch time, timezones, and deltas, django support as well
+
+## Forked from hubspot 'sanetime'
+
+To support python3
 
 ## intro
 
