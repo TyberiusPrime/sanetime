@@ -16,6 +16,7 @@ setup(
     license=open('LICENSE').read(),
     description='A sane date/time python interface:  better epoch time, timezones, and deltas -- django support as well. Now with python3 support',
     long_description=open('README.markdown').read(),
+    long_description_content_type = text/markdown,
     install_requires=[
         'pytz',
         'python-dateutil',
