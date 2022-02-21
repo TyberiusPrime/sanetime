@@ -213,7 +213,9 @@ class SaneTimeTest(unittest.TestCase):
 
     def test_datetime_properties(self):
         self.assertEqual(datetime(2012,1,1,tzinfo=TZ_UTC),time(JAN_MICROS,TZ_UTC).datetime)
-        self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_NY).datetime)
+        ny_should = "datetime.datetime(2012, 1, 1, 0, 0, tzinfo=<DstTzInfo 'America/New_York' EST-1 day, 19:00:00 STD>)"
+        #self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_NY).datetime)
+        self.assertEqual(ny_should,repr(time(NY_JAN_MICROS,TZ_NY).datetime))
 
         self.assertEqual(datetime(2012,1,1),time(JAN_MICROS,TZ_UTC).naive_datetime)
         self.assertEqual(datetime(2012,1,1),time(NY_JAN_MICROS,TZ_NY).naive_datetime)
@@ -224,8 +226,10 @@ class SaneTimeTest(unittest.TestCase):
         self.assertEqual(datetime(2012,1,1),time(JAN_MICROS,TZ_UTC).utc_naive_datetime)
         self.assertEqual(datetime(2012,1,1),time(JAN_MICROS,TZ_NY).utc_naive_datetime)
 
-        self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_UTC).ny_datetime)
-        self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_NY).ny_datetime)
+        #self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_UTC).ny_datetime)
+        #self.assertEqual(datetime(2012,1,1,tzinfo=TZ_NY),time(NY_JAN_MICROS,TZ_NY).ny_datetime)
+        self.assertEqual(ny_should,repr(time(NY_JAN_MICROS,TZ_UTC).ny_datetime))
+        self.assertEqual(ny_should,repr(time(NY_JAN_MICROS,TZ_NY).ny_datetime))
 
         self.assertEqual(datetime(2012,1,1),time(NY_JAN_MICROS,TZ_UTC).ny_naive_datetime)
         self.assertEqual(datetime(2012,1,1),time(NY_JAN_MICROS,TZ_NY).ny_naive_datetime)
