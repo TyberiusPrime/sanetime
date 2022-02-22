@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
 
-__VERSION__ = '5.0.0'
+__VERSION__ = '5.0.1'
 
 setup(
     name='sanetime_py3',
@@ -13,14 +13,13 @@ setup(
     packages=find_packages(),
     url='http://github.com/TyberiusPrime/sanetime',
     download_url='https://github.com/TyberiusPrime/sanetime/tarball/v%s'%__VERSION__,
-    license=open('LICENSE').read(),
+    license="MIT License",
     description='A sane date/time python interface:  better epoch time, timezones, and deltas -- django support as well. Now with python3 support',
-    long_description=open('README.markdown').read(),
-    long_description_content_type = "text/markdown",
+    long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
     install_requires=[
         'pytz',
         'python-dateutil',
-        'unittest2'
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
